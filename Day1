@@ -1,0 +1,28 @@
+--------------
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class CandidateCode {
+   static void Main(String[] args) {
+    string input = Console.ReadLine();
+int intValue;
+bool intResult = int.TryParse(input, out intValue);
+float floatValue;
+bool floatResult = float.TryParse(input, out floatValue);
+ 
+if (intResult== true){
+ Console.WriteLine("This input is of type Integer.");
+}
+else if (floatResult== true){
+ Console.WriteLine("This input is of type Float.");
+}
+else if (input is string){
+ Console.WriteLine("This input is of String.");
+}
+else{
+   Console.WriteLine("This is something else");
+}
+}
+}
+------
