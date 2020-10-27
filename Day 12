@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class CandidateCode {
+    static void Main(String[] args) {
+	int row = 0;
+int col = 0;
+int[ , ] matrix1;
+
+string[] rowAndcolumns = Console.ReadLine( ).Split(' ');
+ 
+row = Convert.ToInt16( rowAndcolumns[0] );
+col = Convert.ToInt16( rowAndcolumns[1]);
+matrix1 = new int[ row, col ];
+//Console.WriteLine( "enter the numbers:" +row );
+for ( int i = 0; i < col; i++ )
+{
+    string[] value = Console.ReadLine( ).Split(' ');
+    for ( int j = 0; j < row; j++ )
+    {
+        matrix1[ i, j ] = Convert.ToInt16(value[j]);
+    }
+}
+
+	int row1 = 0;
+int col1 = 0;
+int[ , ] matrix2;
+
+string[] rowAndcolumns1 = Console.ReadLine( ).Split(' ');
+ 
+row1 = Convert.ToInt16( rowAndcolumns1[0] );
+col1 = Convert.ToInt16( rowAndcolumns1[1]);
+matrix2 = new int[ row, col ];
+//Console.WriteLine( "enter the numbers:" +row );
+for ( int i = 0; i < col1; i++ )
+{
+    string[] value1 = Console.ReadLine( ).Split(' ');
+    for ( int j = 0; j < row1; j++ )
+    {
+        matrix2[ i, j ] = Convert.ToInt16(value1[j]);
+    }
+}
+//Console.WriteLine(row);
+//Console.WriteLine(matrix2[0,0]);
+int[ , ] matrix3 =new int[ row, col ];
+for ( int i = 0; i < col1; i++ )
+{
+    for ( int j = 0; j < row1; j++ )
+    {
+        matrix3[ i, j ] = matrix1[ i, j ]+matrix2[ i, j ];
+    }
+}
+
+for ( int i = 0; i < col1; i++ )
+{
+    for ( int j = 0; j < row1; j++ )
+    {
+       // Console.WriteLine(matrix3[ i, j ]);
+       
+        Console.Write(string.Format("{0} ",matrix3[ i, j ]));
+        
+      }
+      Console.Write(Environment.NewLine);
+         
+}
+    Console.ReadLine();        
+    }
+ 
+}
+
+
