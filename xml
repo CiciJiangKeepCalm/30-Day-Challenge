@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Xml;
+using System.Xml.Linq;
+using System.Linq;
+public class LogParser
+{
+    public static IEnumerable<int> GetIdsByMessage(string xml, string message)
+    
+        =>XDocument.Parse(xml)
+        .Root
+        .Descendants("message")
+        .Where(x => x.Value == message)
+        .Select(x => (int)x.Parent.Attribute("id"));
+    
+       // throw new NotImplementedException("Waiting to be implemented.");
+    
+
+    public static void Main(string[] args)
+    {
+        String xml =
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+                "<log>\n" +
+                "    <entry id=\"1\">\n" +
+                "        <message>Application started</message>\n" +
+                "    </entry>\n" +
+                "    <entry id=\"2\">\n" +
+                "        <message>Application ended</message>\n" +
+                "    </entry>\n" +
+                "</log>";
+
+        foreach (int id in LogParser.GetIdsByMessage(xml, "Application ended"))
+            Console.WriteLine(id);
+    }
+}
