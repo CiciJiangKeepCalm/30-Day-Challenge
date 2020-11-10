@@ -69,4 +69,110 @@ for ( int i = 0; i < col1; i++ )
  
 }
 
+//past all tests
+#include<stdio.h>
 
+
+#include<stdlib.h>
+
+
+int main()
+
+
+{
+
+
+int *aa,*bb;
+
+
+int m,n,p,q;
+
+
+int i,j,x,y;
+
+
+scanf("%d %d",&m,&n);
+
+
+x = m*n;
+
+
+aa = (int *)malloc(x * sizeof(int));
+
+
+for(i=0;i<x;i++)
+
+
+scanf("%d",&aa[i]);
+
+
+scanf("%d %d",&p,&q);
+
+
+y = p*q;
+
+
+bb = (int *)malloc(y * sizeof(int));
+
+
+for(i=0;i<x;i++)
+
+
+scanf("%d",&bb[i]);
+
+
+for(i=0;i<x;i++)
+
+
+aa[i] = aa[i] + bb[i];
+
+
+for(i=0;i<x;i++)
+
+
+{
+
+
+j = 0;
+
+
+while(j<n)
+
+
+{
+
+
+printf("%d",aa[i]);
+
+
+i++;
+
+
+j++;
+
+
+if(j!=n)
+
+
+printf(" ");
+
+
+}
+
+
+if(i!=x)
+
+
+printf("\n");
+
+
+i--;
+
+
+}
+
+
+return 0;
+
+
+}
